@@ -1,0 +1,36 @@
+Q 2 . Write a program for creating Max/Min. heap using INSERT.
+
+#include <iostream>
+using namespace std;
+class MaxHeap{
+    int heap[100];
+    int size;
+public:
+    MaxHeap(){
+        size = 0; }
+    void insert(int value){
+        int i = size;
+        heap[size++] = value;
+        while (i > 0){
+            int parent = (i - 1) / 2;
+            if (heap[parent] < heap[i]){
+                swap(heap[parent], heap[i]);
+                i = parent;}
+            else{
+                break;}}}
+    void display(){
+        cout << "Max Heap: ";
+        for (int i = 0; i < size; i++){
+            cout << heap[i] << " ";}
+        cout << endl; }};
+int main(){
+    MaxHeap h;
+    int n, value;
+    cout << "Enter number of elements: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for (int i = 0; i < n; i++){
+        cin >> value;
+        h.insert(value); }
+    h.display();
+    return 0;}
