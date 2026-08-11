@@ -1,0 +1,23 @@
+Daa
+Q 1. Write a program to implement removal of recursion for- Finding maximum from 
+array.
+
+#include <iostream>
+using namespace std;
+int findMaximum(int arr[], int n){
+    int max = arr[0];
+    for (int i = 1; i < n; i++){
+        if (arr[i] > max) {
+            max = arr[i]; } }
+return max;}
+int main(){
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter the array elements: ";
+    for (int i = 0; i < n; i++){
+        cin >> arr[i];}
+    int maximum = findMaximum(arr, n);
+    cout << "Maximum element = " << maximum << endl;
+    return 0;}
